@@ -16,7 +16,7 @@ describe('SecondaryController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(secondaryController.getHello()).toBe('Hello World!');
+      expect(secondaryController.getName()).toBe('Hello World!');
     });
   });
 });
