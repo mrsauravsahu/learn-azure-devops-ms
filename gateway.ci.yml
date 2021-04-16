@@ -13,6 +13,7 @@ variables:
   containerRegistry: 'learnazurems.azurecr.io'
   dockerfilePath: 'devops/docker/gateway.dockerfile'
   tag: '$(Build.BuildId)'
+  serviceConnectionName: 'learnaazaurems-connection'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -32,6 +33,6 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(containerRegistry)
+        containerRegistry: $(serviceConnectionName)
         tags: |
           $(tag)
